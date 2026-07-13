@@ -38,6 +38,23 @@ body.is-resizing * {
     transition: none !important;
 }
 
+// While the layout is frozen during a drag (see mapPanel.js), two things
+// still force full-page repaints when SHRINKING the window:
+//  1. The locked-width content becomes wider than the viewport, spawning a
+//     horizontal scrollbar whose scroll region repaints the whole page every
+//     frame. Clip overflow instead so it just clips the frozen content.
+//  2. .navbar/.footer (and .content on mobile) are sized in 100vw, which is
+//     viewport-relative and ignores the locked parent width — so they keep
+//     resizing every frame. Pin them to the locked parent width instead.
+body.is-resizing {
+    overflow: hidden !important;
+
+    .content, .navbar, .footer {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+}
+
 // Isolate the map's repaints from the rest of the page (map interactions
 // like hover/zoom then don't repaint the surrounding layout). The heavy
 // per-frame repaint during a window drag is handled in JS by freezing the
