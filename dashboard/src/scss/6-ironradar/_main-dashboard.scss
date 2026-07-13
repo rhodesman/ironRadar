@@ -111,7 +111,27 @@ body.is-resizing {
         &, .row {
             max-height: 100%;
         }
+        // Stack each pane's cards vertically and fill the full column height,
+        // so all three panes end up the same height with content top-aligned.
+        // The markup uses .row + flex-grow-1, but flex-grow only grows on the
+        // main axis (horizontal for a .row); switching the pane's inner wrapper
+        // to a column makes that grow work vertically, as intended.
+        > .row {
+            flex-direction: column;
+            flex-wrap: nowrap;
+            height: 100%;
+        }
     }
+}
+
+// The card in each pane that absorbs the leftover vertical space, so every
+// pane fills to the same height. min-height:0 lets these scroll internally
+// (e.g. the framework list) instead of overflowing the pane.
+#frameworkChange,
+#map,
+#coverage {
+    flex: 1 1 auto;
+    min-height: 0;
 }
 
 #logo {
