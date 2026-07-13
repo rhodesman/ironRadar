@@ -28,6 +28,30 @@ body {
     overflow-y:auto;
 }
 
+// Universal dark-theme scrollbars (horizontal + vertical), styled for every
+// browser. Firefox + Chromium use the standard scrollbar-* properties; Safari
+// and older Chromium use the ::-webkit-scrollbar pseudo-elements. This is the
+// only cross-browser way to theme the browser's own (window/body) scrollbar —
+// SimpleBar can't replace that one.
+* {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255, 255, 255, 0.25) transparent;
+}
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;   // horizontal scrollbar thickness
+}
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.25);
+    border-radius: 4px;
+    &:hover {
+        background: rgba(255, 255, 255, 0.4);
+    }
+}
+
 // Suppress layout transitions while the window is actively being resized.
 // AdminKit's .main / .sidebar animate margin/left/right over .35s (for the
 // sidebar slide-toggle); during a window drag that makes the whole content
