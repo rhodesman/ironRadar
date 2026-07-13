@@ -85,6 +85,8 @@ body.is-resizing {
 // whole layout for the duration of the drag (see mapPanel.js).
 #world_map {
     contain: layout paint;
+    width: 100%;
+    aspect-ratio: 900 / 440.706;   // lock to the world map's own ratio
 }
 
 .wrapper, .content {
@@ -126,12 +128,24 @@ body.is-resizing {
 
 // The card in each pane that absorbs the leftover vertical space, so every
 // pane fills to the same height. min-height:0 lets these scroll internally
-// (e.g. the framework list) instead of overflowing the pane.
+// (e.g. the framework lists) instead of overflowing the pane. In the center
+// pane the *table* grows (not the map) — the map holds a fixed ratio below.
 #frameworkChange,
-#map,
+#frameworkList,
 #coverage {
     flex: 1 1 auto;
     min-height: 0;
+}
+
+// The map keeps a fixed aspect ratio (the world map is 900 x 440.706 ≈
+// 2.042:1), so its height always tracks its width and it never absorbs
+// vertical slack. #frameworkList below it grows/shrinks with the window
+// height instead.
+#map {
+    flex: 0 0 auto;
+    > .card {
+        height: auto !important;   // override the h-100 / flex-fill utilities
+    }
 }
 
 #logo {
