@@ -7,7 +7,8 @@ import { getGeoData } from './config.js';
 
 let map;
 let resizeHandlerRegistered = false;
-let resizeRaf = null;
+let resizeTimer = null;
+let lastMapWidth = 0;
 
 export function drawMap(mapData) {
     clearMap();
@@ -69,15 +70,26 @@ export function plotMap(mapData) {
 
     // Register the resize handler once. `map` is module-scoped and reassigned
     // on each plot, so the single listener always resizes the current map.
-    // Throttle with requestAnimationFrame so a drag-resize triggers at most
-    // one (expensive) SVG redraw per frame instead of one per resize event.
+    //
+    // #world_map has no fixed height, so jsvectormap derives the SVG height
+    // from the container width and the container height then follows the SVG.
+    // Redrawing mid-drag resizes the SVG on every frame, which relayouts the
+    // div and can toggle the page scrollbar — a reflow loop that reads as
+    // jitter. So debounce: wait until the window stops resizing, then do a
+    // single redraw. The width guard skips resize events that don't actually
+    // change the map's width (e.g. a scrollbar toggling), avoiding a bounce.
     if (!resizeHandlerRegistered) {
         window.addEventListener("resize", () => {
-            if (resizeRaf) return;
-            resizeRaf = window.requestAnimationFrame(() => {
-                resizeRaf = null;
-                if (map) map.updateSize();
-            });
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(() => {
+                if (!map) return;
+                const el = document.getElementById('world_map');
+                if (!el) return;
+                const width = el.clientWidth;
+                if (width === lastMapWidth) return;
+                lastMapWidth = width;
+                map.updateSize();
+            }, 200);
         });
         resizeHandlerRegistered = true;
     }
