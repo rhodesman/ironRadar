@@ -28,6 +28,16 @@ body {
     overflow-y:auto;
 }
 
+// Suppress layout transitions while the window is actively being resized.
+// AdminKit's .main / .sidebar animate margin/left/right over .35s (for the
+// sidebar slide-toggle); during a window drag that makes the whole content
+// area lag and "step" behind the window edge. The .is-resizing class is
+// toggled from JS (see mapPanel.js) on resize and cleared once it settles,
+// so normal toggle animations are unaffected.
+body.is-resizing * {
+    transition: none !important;
+}
+
 .wrapper, .content {
     height:100vh;
     min-height: 930px;

@@ -80,8 +80,13 @@ export function plotMap(mapData) {
     // change the map's width (e.g. a scrollbar toggling), avoiding a bounce.
     if (!resizeHandlerRegistered) {
         window.addEventListener("resize", () => {
+            // Suppress AdminKit's .main/.sidebar layout transitions during the
+            // drag so the content tracks the window edge instantly instead of
+            // stepping behind it (see body.is-resizing in _main-dashboard.scss).
+            document.body.classList.add('is-resizing');
             clearTimeout(resizeTimer);
             resizeTimer = setTimeout(() => {
+                document.body.classList.remove('is-resizing');
                 if (!map) return;
                 const el = document.getElementById('world_map');
                 if (!el) return;
