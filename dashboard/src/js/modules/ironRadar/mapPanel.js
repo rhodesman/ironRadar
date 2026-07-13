@@ -6,6 +6,8 @@ import jsVectorMap from 'jsvectormap';
 import { getGeoData } from './config.js';
 
 let map;
+let resizeHandlerRegistered = false;
+let resizeRaf = null;
 
 export function drawMap(mapData) {
     clearMap();
@@ -65,9 +67,20 @@ export function plotMap(mapData) {
         }
     });
 
-    window.addEventListener("resize", () => {
-        map.updateSize();
-    });
+    // Register the resize handler once. `map` is module-scoped and reassigned
+    // on each plot, so the single listener always resizes the current map.
+    // Throttle with requestAnimationFrame so a drag-resize triggers at most
+    // one (expensive) SVG redraw per frame instead of one per resize event.
+    if (!resizeHandlerRegistered) {
+        window.addEventListener("resize", () => {
+            if (resizeRaf) return;
+            resizeRaf = window.requestAnimationFrame(() => {
+                resizeRaf = null;
+                if (map) map.updateSize();
+            });
+        });
+        resizeHandlerRegistered = true;
+    }
 
     createLegend();
 }
