@@ -38,18 +38,12 @@ body.is-resizing * {
     transition: none !important;
 }
 
-// The world-map SVG is thousands of vector paths and is by far the most
-// expensive thing on the page to re-rasterize. During a window drag the
-// browser repaints it on every frame as the page reflows, which makes the
-// whole page lag. Skip painting it while resizing (visibility:hidden keeps
-// its layout box so nothing shifts); it's restored and redrawn once the
-// resize settles (see mapPanel.js). contain:paint isolates its repaints the
-// rest of the time so map interactions don't repaint the surrounding page.
+// Isolate the map's repaints from the rest of the page (map interactions
+// like hover/zoom then don't repaint the surrounding layout). The heavy
+// per-frame repaint during a window drag is handled in JS by freezing the
+// whole layout for the duration of the drag (see mapPanel.js).
 #world_map {
     contain: layout paint;
-}
-body.is-resizing #world_map {
-    visibility: hidden;
 }
 
 .wrapper, .content {

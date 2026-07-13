@@ -71,22 +71,26 @@ export function plotMap(mapData) {
     // Register the resize handler once. `map` is module-scoped and reassigned
     // on each plot, so the single listener always resizes the current map.
     //
-    // #world_map has no fixed height, so jsvectormap derives the SVG height
-    // from the container width and the container height then follows the SVG.
-    // Redrawing mid-drag resizes the SVG on every frame, which relayouts the
-    // div and can toggle the page scrollbar — a reflow loop that reads as
-    // jitter. So debounce: wait until the window stops resizing, then do a
-    // single redraw. The width guard skips resize events that don't actually
-    // change the map's width (e.g. a scrollbar toggling), avoiding a bounce.
+    // This page is fully fluid and paint-heavy (a huge world-map SVG plus
+    // canvas charts), so letting it reflow on every resize event repaints the
+    // whole body each frame and lags. Instead, freeze the layout for the
+    // duration of the drag: on the first event of a burst, lock #ironRadarUI
+    // to its current pixel width so nothing inside reflows/repaints while the
+    // window moves. When the resize settles, unlock, let the page reflow once,
+    // and redraw the map a single time to match the new size.
     if (!resizeHandlerRegistered) {
         window.addEventListener("resize", () => {
-            // Suppress AdminKit's .main/.sidebar layout transitions during the
-            // drag so the content tracks the window edge instantly instead of
-            // stepping behind it (see body.is-resizing in _main-dashboard.scss).
+            const root = document.getElementById('ironRadarUI');
+            // First event of the burst: capture and lock the current width.
+            if (root && !document.body.classList.contains('is-resizing')) {
+                root.style.width = root.clientWidth + 'px';
+            }
+            // is-resizing also freezes CSS transitions (see _main-dashboard.scss).
             document.body.classList.add('is-resizing');
             clearTimeout(resizeTimer);
             resizeTimer = setTimeout(() => {
                 document.body.classList.remove('is-resizing');
+                if (root) root.style.width = '';   // unlock; page reflows once
                 if (!map) return;
                 const el = document.getElementById('world_map');
                 if (!el) return;
