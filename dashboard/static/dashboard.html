@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+    <meta name="description" content="Responsive Admin &amp; Dashboard Template based on Bootstrap 5">
+    <meta name="author" content="AdminKit">
+    <meta name="keywords"
+        content="adminkit, bootstrap, bootstrap 5, admin, dashboard, template, responsive, css, sass, html, theme, front-end, ui kit, web">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="shortcut icon" href="img/icons/icon-48x48.png" />
+    <title>IronRadar - Dashboard</title>
+    <link href="css/app.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <script src="js/html2canvas.min.js"></script>
+    <script defer="defer" src="js/dashboard.js"></script>
+    <script defer="defer" src="js/dashboard.js"></script>
+    <script defer="defer" src="js/dashboard.js"></script>
+</head>
+
+<body><button id="loginButton">Login with Microsoft</button>
+    <div id="ironRadarUI" class="wrapper">
+        <div class="main">
+            <main class="content">
+                <div class="container-fluid p-0 h-100">
+                    <div class="row main-content-wrapper">
+                        <div id="leftPane" class="col-3">
+                            <div class="row align-items-start h-100">
+                                <div id="totalInd" class="col-12">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <div class="row">
+                                                <div class="col mt-0">
+                                                    <h5 class="card-title">Total Indicators</h5>
+                                                </div>
+                                            </div>
+                                            <h1 class="total">0</h1>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="frameworkChange" class="col-12 flex-grow-1">
+                                    <div class="card w-100 h-100">
+                                        <div class="row card-body">
+                                            <div class="card-header">
+                                                <h5 class="card-title mb-0">Change in Framework</h5>
+                                            </div>
+                                            <div class="data-totals">
+                                                <div class="data-sum"><span class="total">NULL</span> <span
+                                                        class="indicator">Indicator</span></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="centerPane" class="col-6">
+                            <div class="row align-items-start h-100">
+                                <div id="header" class="col-12 card">
+                                    <div class="row h-100">
+                                        <div class="col-3">
+                                            <p>BETA v0.1.4.0</p>
+                                        </div>
+                                        <div id="logo" class="col-6"><img
+                                                src="img/IronRadar-logo-on-dark-white-text-500px.png"></div>
+                                        <div class="col-3">
+                                            <div class="d-grid gap-2"><button id="upload-json-button" type="button"
+                                                    class="btn btn-outline-light export">Export CSV</button> <button
+                                                    id="btnPrint" type="button"
+                                                    class="btn btn-outline-light print">Print Dashboard</button> <i
+                                                    class="bi-arrow-repeat"></i></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="map" class="col-12">
+                                    <div class="card flex-fill w-100 h-100">
+                                        <div class="card-body px-2 py-2">
+                                            <div id="world_map" style="height:40vh;"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="frameworkList" class="col-12">
+                                    <div class="card">
+                                        <div class="row card-header align-items-center">
+                                            <div class="col-6"><i id="expandTable"
+                                                    class="bi bi-arrows-angle-expand"></i>
+                                                <h5 class="card-title mb-0 align-self-center">Detected Framework</h5>
+                                            </div>
+                                            <form class="col-6">
+                                                <div class="mb-0"><input class="form-control" placeholder="Search"
+                                                        id="search" aria-label="search"> <i id="searchButton"
+                                                        class="bi bi-search"></i></div>
+                                            </form>
+                                        </div>
+                                        <div class="dual-ring"></div>
+                                        <table id="detectedFrameworks" class="table table-hover my-0 sortable">
+                                            <thead>
+                                                <tr>
+                                                    <th class="headerSort">Indicator</th>
+                                                    <th class="headerSort">Port</th>
+                                                    <th class="headerSort arrow-down">Framework Detected</th>
+                                                    <th class="headerSort">Secondary Source</th>
+                                                    <th class="headerSort">Confidence</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody></tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="rightPane" class="col-3">
+                            <div class="row h-100">
+                                <div id="coverage" class="col-12">
+                                    <div class="card flex-fill w-100 h-100">
+                                        <div class="card-header">
+                                            <h5 class="card-title mb-0">Detection Coverage</h5>
+                                        </div>
+                                        <div class="card-body d-flex h-100">
+                                            <div class="w-100">
+                                                <div class="py-3">
+                                                    <div class="chart chart-xs"><canvas id="threatChart"></canvas>
+                                                        <div id="labelContainer">
+                                                            <div class="column" id="column1">
+                                                                <ul id="list1"></ul>
+                                                            </div>
+                                                            <div class="column" id="column2">
+                                                                <ul id="list2"></ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+    <script src="js/dashboard.js"></script>
+</body>
+
+</html>

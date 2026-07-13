@@ -1,0 +1,446 @@
+{
+    "42.193.16.213": {
+        "65520": [
+            {
+                "indicator": "42.193.16.213",
+                "port": 65520,
+                "last_seen": "2024-03-30T03:32:33.977000+00:00",
+                "threat": "Cobalt Strike",
+                "threat_type": "c2.http.address",
+                "confidence": "Medium",
+                "tlp": "CLEAR",
+                "type": "ipv4-addr"
+            },
+            {
+                "indicator": "42.193.16.213",
+                "port": 65520,
+                "last_seen": "2024-03-30T03:32:33.977000+00:00",
+                "threat": "Cobalt Strike",
+                "threat_type": "c2.http.listener",
+                "confidence": "High",
+                "tlp": "CLEAR",
+                "type": "ipv4-addr"
+            },
+            {
+                "indicator": "42.193.16.213",
+                "port": 65520,
+                "last_seen": "2024-03-29T03:32:27.473000+00:00",
+                "threat": "Cobalt Strike",
+                "threat_type": "c2.http.address",
+                "confidence": "Medium",
+                "tlp": "CLEAR",
+                "type": "ipv4-addr"
+            },
+            {
+                "indicator": "42.193.16.213",
+                "port": 65520,
+                "last_seen": "2024-03-29T03:32:27.473000+00:00",
+                "threat": "Cobalt Strike",
+                "threat_type": "c2.http.listener",
+                "confidence": "High",
+                "tlp": "CLEAR",
+                "type": "ipv4-addr"
+            }
+        ],
+        "9981": [
+            {
+                "indicator": "42.193.16.213",
+                "port": 9981,
+                "last_seen": "2024-03-29T03:32:27.472000+00:00",
+                "threat": "Cobalt Strike",
+                "threat_type": "c2.http.address",
+                "confidence": "Medium",
+                "tlp": "CLEAR",
+                "type": "ipv4-addr"
+            },
+            {
+                "indicator": "42.193.16.213",
+                "port": 9981,
+                "last_seen": "2024-03-29T03:32:27.472000+00:00",
+                "threat": "Cobalt Strike",
+                "threat_type": "c2.http.listener",
+                "confidence": "High",
+                "tlp": "CLEAR",
+                "type": "ipv4-addr"
+            }
+        ],
+        "50050": [
+            {
+                "indicator": "42.193.16.213",
+                "port": 50050,
+                "last_seen": "2024-03-29T03:32:19.193000+00:00",
+                "threat": "Cobalt Strike",
+                "threat_type": "c2.tcp.management",
+                "confidence": "High",
+                "tlp": "AMBER",
+                "type": "ipv4-addr"
+            }
+        ]
+    },
+    "43.240.49.137": {
+        "809": [
+            {
+                "indicator": "43.240.49.137",
+                "port": 809,
+                "last_seen": "2024-03-30T03:34:00.359000+00:00",
+                "threat": "Cobalt Strike",
+                "threat_type": "c2.http.listener",
+                "confidence": "High",
+                "tlp": "CLEAR",
+                "type": "ipv4-addr"
+            },
+            {
+                "indicator": "43.240.49.137",
+                "port": 809,
+                "last_seen": "2024-03-29T03:33:59.354000+00:00",
+                "threat": "Cobalt Strike",
+                "threat_type": "c2.http.listener",
+                "confidence": "High",
+                "tlp": "CLEAR",
+                "type": "ipv4-addr"
+            }
+        ]
+    },
+    "149.129.241.76": {
+        "3333": [
+            {
+                "indicator": "149.129.241.76",
+                "port": 3333,
+                "last_seen": "2024-03-30T03:33:04.085000+00:00",
+                "threat": "Gophish",
+                "threat_type": "phishing.http.management",
+                "confidence": "High",
+                "tlp": "AMBER",
+                "type": "ipv4-addr"
+            },
+            {
+                "indicator": "149.129.241.76",
+                "port": 3333,
+                "last_seen": "2024-03-29T03:33:18.019000+00:00",
+                "threat": "Gophish",
+                "threat_type": "phishing.http.management",
+                "confidence": "High",
+                "tlp": "AMBER",
+                "type": "ipv4-addr"
+            }
+        ]
+    },
+    "117.72.32.35": {
+        "6005": [
+            {
+                "indicator": "117.72.32.35",
+                "port": 6005,
+                "last_seen": "2024-03-30T03:33:17.008000+00:00",
+                "threat": "Asset Reconnaissance Lighthouse",
+                "threat_type": "recon.http.management",
+                "confidence": "High",
+                "tlp": "AMBER",
+                "type": "ipv4-addr"
+            },
+            {
+                "indicator": "117.72.32.35",
+                "port": 6005,
+                "last_seen": "2024-03-29T03:33:19.824000+00:00",
+                "threat": "Asset Reconnaissance Lighthouse",
+                "threat_type": "recon.http.management",
+                "confidence": "High",
+                "tlp": "AMBER",
+                "type": "ipv4-addr"
+            }
+        ]
+    },
+    "148.135.4.219": {
+        "5003": [
+            {
+                "indicator": "148.135.4.219",
+                "port": 5003,
+                "last_seen": "2024-03-30T03:32:59.500000+00:00",
+                "threat": "Asset Reconnaissance Lighthouse",
+                "threat_type": "recon.http.management",
+                "confidence": "High",
+                "tlp": "AMBER",
+                "type": "ipv4-addr"
+            },
+            {
+                "indicator": "148.135.4.219",
+                "port": 5003,
+                "last_seen": "2024-03-29T03:32:46.517000+00:00",
+                "threat": "Asset Reconnaissance Lighthouse",
+                "threat_type": "recon.http.management",
+                "confidence": "High",
+                "tlp": "AMBER",
+                "type": "ipv4-addr"
+            }
+        ]
+    },
+    "38.207.179.33": {
+        "5003": [
+            {
+                "indicator": "38.207.179.33",
+                "port": 5003,
+                "last_seen": "2024-03-30T03:32:56.449000+00:00",
+                "threat": "Asset Reconnaissance Lighthouse",
+                "threat_type": "recon.http.management",
+                "confidence": "High",
+                "tlp": "AMBER",
+                "type": "ipv4-addr"
+            },
+            {
+                "indicator": "38.207.179.33",
+                "port": 5003,
+                "last_seen": "2024-03-29T03:32:53.939000+00:00",
+                "threat": "Asset Reconnaissance Lighthouse",
+                "threat_type": "recon.http.management",
+                "confidence": "High",
+                "tlp": "AMBER",
+                "type": "ipv4-addr"
+            }
+        ]
+    },
+    "microsoft.kasperzky.xyz": {
+        "0": [
+            {
+                "indicator": "microsoft.kasperzky.xyz",
+                "port": 0,
+                "last_seen": "2024-03-30T03:33:41.299000+00:00",
+                "threat": "Cobalt Strike",
+                "threat_type": "c2.http.header.host",
+                "confidence": "Low",
+                "tlp": "CLEAR",
+                "type": "domain-name"
+            },
+            {
+                "indicator": "microsoft.kasperzky.xyz",
+                "port": 0,
+                "last_seen": "2024-03-29T03:33:25.779000+00:00",
+                "threat": "Cobalt Strike",
+                "threat_type": "c2.http.header.host",
+                "confidence": "Low",
+                "tlp": "CLEAR",
+                "type": "domain-name"
+            }
+        ],
+        "443": [
+            {
+                "indicator": "microsoft.kasperzky.xyz",
+                "port": 443,
+                "last_seen": "2024-03-30T03:33:41.299000+00:00",
+                "threat": "Cobalt Strike",
+                "threat_type": "c2.http.address",
+                "confidence": "Medium",
+                "tlp": "CLEAR",
+                "type": "domain-name"
+            },
+            {
+                "indicator": "microsoft.kasperzky.xyz",
+                "port": 443,
+                "last_seen": "2024-03-30T03:32:53.554000+00:00",
+                "threat": "Cobalt Strike",
+                "threat_type": "c2.http.listener",
+                "confidence": "High",
+                "tlp": "CLEAR",
+                "type": "domain-name"
+            },
+            {
+                "indicator": "microsoft.kasperzky.xyz",
+                "port": 443,
+                "last_seen": "2024-03-29T03:32:58.485000+00:00",
+                "threat": "Cobalt Strike",
+                "threat_type": "c2.http.listener",
+                "confidence": "High",
+                "tlp": "CLEAR",
+                "type": "domain-name"
+            },
+            {
+                "indicator": "microsoft.kasperzky.xyz",
+                "port": 443,
+                "last_seen": "2024-03-29T03:33:25.779000+00:00",
+                "threat": "Cobalt Strike",
+                "threat_type": "c2.http.address",
+                "confidence": "Medium",
+                "tlp": "CLEAR",
+                "type": "domain-name"
+            }
+        ]
+    },
+    "107.174.11.183": {
+        "443": [
+            {
+                "indicator": "107.174.11.183",
+                "port": 443,
+                "last_seen": "2024-03-30T03:32:12.206000+00:00",
+                "threat": "Asset Reconnaissance Lighthouse",
+                "threat_type": "recon.http.management",
+                "confidence": "High",
+                "tlp": "AMBER",
+                "type": "ipv4-addr"
+            },
+            {
+                "indicator": "107.174.11.183",
+                "port": 443,
+                "last_seen": "2024-03-29T03:32:44.703000+00:00",
+                "threat": "Asset Reconnaissance Lighthouse",
+                "threat_type": "recon.http.management",
+                "confidence": "High",
+                "tlp": "AMBER",
+                "type": "ipv4-addr"
+            }
+        ],
+        "5003": [
+            {
+                "indicator": "107.174.11.183",
+                "port": 5003,
+                "last_seen": "2024-03-30T03:32:18.340000+00:00",
+                "threat": "Asset Reconnaissance Lighthouse",
+                "threat_type": "recon.http.management",
+                "confidence": "High",
+                "tlp": "AMBER",
+                "type": "ipv4-addr"
+            },
+            {
+                "indicator": "107.174.11.183",
+                "port": 5003,
+                "last_seen": "2024-03-29T03:32:48.054000+00:00",
+                "threat": "Asset Reconnaissance Lighthouse",
+                "threat_type": "recon.http.management",
+                "confidence": "High",
+                "tlp": "AMBER",
+                "type": "ipv4-addr"
+            }
+        ]
+    },
+    "193.32.162.70": {
+        "80": [
+            {
+                "indicator": "193.32.162.70",
+                "port": 80,
+                "last_seen": "2024-03-30T03:32:57.822000+00:00",
+                "threat": "Cobalt Strike",
+                "threat_type": "c2.http.listener",
+                "confidence": "High",
+                "tlp": "CLEAR",
+                "type": "ipv4-addr"
+            },
+            {
+                "indicator": "193.32.162.70",
+                "port": 80,
+                "last_seen": "2024-03-30T03:32:57.822000+00:00",
+                "threat": "Cobalt Strike",
+                "threat_type": "c2.http.address",
+                "confidence": "Medium",
+                "tlp": "CLEAR",
+                "type": "ipv4-addr"
+            }
+        ]
+    },
+    "149.28.159.34": {
+        "443": [
+            {
+                "indicator": "149.28.159.34",
+                "port": 443,
+                "last_seen": "2024-03-30T03:35:06.616000+00:00",
+                "threat": "Cobalt Strike",
+                "threat_type": "c2.http.address",
+                "confidence": "Medium",
+                "tlp": "CLEAR",
+                "type": "ipv4-addr"
+            },
+            {
+                "indicator": "149.28.159.34",
+                "port": 443,
+                "last_seen": "2024-03-30T03:35:06.616000+00:00",
+                "threat": "Cobalt Strike",
+                "threat_type": "c2.http.listener",
+                "confidence": "High",
+                "tlp": "CLEAR",
+                "type": "ipv4-addr"
+            }
+        ]
+    },
+    "20.107.244.135": {
+        "80": [
+            {
+                "indicator": "20.107.244.135",
+                "port": 80,
+                "last_seen": "2024-03-30T03:32:49.146000+00:00",
+                "threat": "Cobalt Strike",
+                "threat_type": "c2.http.address",
+                "confidence": "Medium",
+                "tlp": "CLEAR",
+                "type": "ipv4-addr"
+            },
+            {
+                "indicator": "20.107.244.135",
+                "port": 80,
+                "last_seen": "2024-03-30T03:32:49.146000+00:00",
+                "threat": "Cobalt Strike",
+                "threat_type": "c2.http.listener",
+                "confidence": "High",
+                "tlp": "CLEAR",
+                "type": "ipv4-addr"
+            },
+            {
+                "indicator": "20.107.244.135",
+                "port": 80,
+                "last_seen": "2024-03-29T03:32:41.855000+00:00",
+                "threat": "Cobalt Strike",
+                "threat_type": "c2.http.address",
+                "confidence": "Medium",
+                "tlp": "CLEAR",
+                "type": "ipv4-addr"
+            },
+            {
+                "indicator": "20.107.244.135",
+                "port": 80,
+                "last_seen": "2024-03-29T03:32:41.855000+00:00",
+                "threat": "Cobalt Strike",
+                "threat_type": "c2.http.listener",
+                "confidence": "High",
+                "tlp": "CLEAR",
+                "type": "ipv4-addr"
+            }
+        ],
+        "443": [
+            {
+                "indicator": "20.107.244.135",
+                "port": 443,
+                "last_seen": "2024-03-30T03:32:39.880000+00:00",
+                "threat": "Cobalt Strike",
+                "threat_type": "c2.http.address",
+                "confidence": "Medium",
+                "tlp": "CLEAR",
+                "type": "ipv4-addr"
+            },
+            {
+                "indicator": "20.107.244.135",
+                "port": 443,
+                "last_seen": "2024-03-30T03:32:39.880000+00:00",
+                "threat": "Cobalt Strike",
+                "threat_type": "c2.http.listener",
+                "confidence": "High",
+                "tlp": "CLEAR",
+                "type": "ipv4-addr"
+            },
+            {
+                "indicator": "20.107.244.135",
+                "port": 443,
+                "last_seen": "2024-03-29T03:32:44.201000+00:00",
+                "threat": "Cobalt Strike",
+                "threat_type": "c2.http.listener",
+                "confidence": "High",
+                "tlp": "CLEAR",
+                "type": "ipv4-addr"
+            },
+            {
+                "indicator": "20.107.244.135",
+                "port": 443,
+                "last_seen": "2024-03-29T03:32:44.201000+00:00",
+                "threat": "Cobalt Strike",
+                "threat_type": "c2.http.address",
+                "confidence": "Medium",
+                "tlp": "CLEAR",
+                "type": "ipv4-addr"
+            }
+        ]
+    }
+}

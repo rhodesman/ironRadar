@@ -1,0 +1,13 @@
+**/node_modules
+**/*.map
+dashboard/src
+dashboard/dist
+.git
+docs
+logs
+*.log
+
+# Dead API credentials — the app reads a local JSON snapshot, no external API
+backend-server/.env
+# Unused: GeoIP lookups use geoip-lite's own bundled data, not these 55MB files
+backend-server/data/*.mmdb

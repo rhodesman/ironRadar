@@ -1,0 +1,10 @@
+{
+  HK: { count: 911, coordinates: { lat: 22.2578, lon: 114.1657 } },
+  US: { count: 2145, coordinates: { lat: 40.8446, lon: -74.5749 } },
+  AU: { count: 48, coordinates: { lat: -33.8715, lon: 151.2006 } },
+  Unknown: { count: 547, coordinates: { lat: null, lon: null } },
+  RU: { count: 228, coordinates: { lat: 55.7483, lon: 37.6171 } },
+  IN: { count: 101, coordinates: { lat: 12.9634, lon: 77.5855 } },
+  '': { count: 27, coordinates: { lat: '', lon: '' } },
+  TM: { count: 4, coordinates: { lat: 37.95, lon: 58.3833 } }
+}
