@@ -57,6 +57,22 @@ cd backend-server && npm install && node server.js
 
 Open http://localhost:8888/.
 
+## Development
+
+The compiled frontend under `dashboard/static/` is **committed to the repo**
+(so the server needs no build step). Because of that, whenever you edit
+anything in `dashboard/src/`, rebuild and commit the regenerated bundle:
+
+```bash
+cd dashboard && NODE_ENV=production npm run build
+# then commit the updated dashboard/static/js/app.js + css/app.css (+ .map files)
+```
+
+- IronRadar-specific styling lives in `dashboard/src/scss/6-ironradar/_main-dashboard.scss`.
+- The world map and its resize handling live in `dashboard/src/js/modules/ironRadar/mapPanel.js`.
+- The webpack output filenames are not content-hashed, so hard-refresh
+  (and purge any CDN cache) after deploying to pick up CSS/JS changes.
+
 ## Deploying behind a domain
 
 Put a reverse proxy in front to serve it over HTTPS on a real hostname. With
