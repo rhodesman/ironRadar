@@ -86,7 +86,8 @@ body.is-resizing {
 #world_map {
     contain: layout paint;
     width: 100%;
-    aspect-ratio: 900 / 440.706;   // lock to the world map's own ratio
+    height: 100%;      // fill the card (which fills #map's aspect-ratio box)
+    min-height: 0;      // don't let the SVG expand past the box
 }
 
 .wrapper, .content {
@@ -143,8 +144,9 @@ body.is-resizing {
 // height instead.
 #map {
     flex: 0 0 auto;
+    aspect-ratio: 900 / 440.706;   // #map itself holds the map's ratio
     > .card {
-        height: auto !important;   // override the h-100 / flex-fill utilities
+        height: 100% !important;   // card fills #map exactly — no dead space
     }
 }
 
